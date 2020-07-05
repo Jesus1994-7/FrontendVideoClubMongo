@@ -20,15 +20,13 @@ export class LoginComponent  {
       this.userService.login(credentials)
         .subscribe(res => {
           localStorage.setItem('localDates', JSON.stringify(res))
-          localStorage.setItem('authToken', res.token);
+          
           localStorage.setItem('user', JSON.stringify(res.user))
           this.userService.setUser(res.user);
 
           this.userService.isProfOut = true;
-          console.log(this.userService.isProfOut)
-          var dataLogin = JSON.parse(localStorage.getItem('localDates'));
-          console.log(dataLogin)
-          
+          console.log(this.userService.isProfOut);
+
           setTimeout(() => {
             this.router.navigate(['/']);
           }, 1500);

@@ -42,11 +42,15 @@ export class MovieComponent implements OnInit {
 
     this.order.movieId = filmId;
 
+    let today = new Date();
+    let tomorrow = new Date();
+    tomorrow.setDate(today.getDate()+3);
+
     var dataLogin:User = JSON.parse(localStorage.getItem('user'));
     this.order.userId = dataLogin['_id'];
 
-    this.order.deliveryDate = new Date();
-    this.order.returnDate = new Date();  
+    this.order.deliveryDate = today;
+    this.order.returnDate = tomorrow;  
     
     this.orderService.createOrder(this.order)
     .subscribe()
