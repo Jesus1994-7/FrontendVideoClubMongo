@@ -1,0 +1,10 @@
+<div class="title">Comedia</div>
+<div class="movies">
+    <div class="movie" *ngFor="let comedyMovie of movieService.getMoviesGenre()">
+       <a routerLink="/allmovies" routerLinkActive="active-link">
+        <img width="200" (click)="movieService.locateFilm(comedyMovie)" 
+         height="288" src="https://image.tmdb.org/t/p/w200/{{comedyMovie.poster_path}}" 
+         alt="poster">
+       </a>
+    </div>
+</div>

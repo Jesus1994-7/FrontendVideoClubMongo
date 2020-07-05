@@ -1,0 +1,12 @@
+<form class="loginForm" #loginForm="ngForm" (submit)="login(loginForm)">
+    
+    <div class="form-group">
+        <input type="email" ngModel  class="form-control" id="exampleInputEmail1" required name="email"  placeholder="Introduce tu email" aria-describedby="emailHelp">
+    </div>
+
+    <div class="form-group">
+        <input type="password" name="password" ngModel class="form-control" required placeholder="Introduce tu contraseña" id="exampleInputPassword1">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

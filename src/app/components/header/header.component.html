@@ -1,0 +1,28 @@
+<div class="navegador">
+    <div>
+        <a routerLink="/" routerLinkActive="active-link"><img width="270px" height="60px" src="../../../../../assets/imgs/logo-angular.webp" alt=""></a>
+    </div>
+    <div id="enlaces">
+        <a routerLink="/allmovies" routerLinkActive="active-link">Todas las peliculas</a>
+        <a routerLink="/mostpopular" routerLinkActive="active-link">Más vistas</a>
+        <a routerLink="/lastmovies" routerLinkActive="active-link">Últimas peliculas</a>
+    </div>
+    <div id="buscador-github">
+        <div id="contenedor-buscador">
+            <input class="buscador" type="text" name="buscador" placeholder="Busca una pelicula" (keyup)="searchMovie($event.target.value)" >
+            <a id="buscar" routerLink="/search" routerLinkActive="active-link">Buscar</a>
+        </div>
+
+    </div>
+    <div>
+        <div id="registro-login" *ngIf="!getUser() as user">
+            <a routerLink="login">Login</a>
+            <a routerLink="signup">Registro</a>
+        </div>
+        <div class="profile-logOut" *ngIf="getUser() as user">
+            <a routerLink="profile" ><img id="usuario" height="50" width="50" src="../../../assets/imgs/perfilUsuario.png" alt=""></a>
+            <a id="logout" (click)="logout()">LogOut</a>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,104 @@
+.filmmain {
+    display: flex;
+    width: 100%;
+    height: 95vh;
+    flex-direction: column;
+    align-items: center;
+    background: black;
+  }
+    
+  .filmmainChild {
+    position: relative;
+    width: 66%;
+    height: 100%;
+    background-color: rgb(80, 80, 80);
+    border-radius: 25px;
+  }
+  
+  img {
+    border-radius: 5px;
+  }
+  
+  .blank {
+    height: 8%;
+    width: 100%;
+  }
+  
+  .filmTitle {
+    height: 7%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    text-align: center;
+    font-size: 24px;
+  }
+  
+  .filmInfo {
+    display: flex;
+    width: 100%;
+    height: 80%;
+    flex-direction: row;
+  }
+  .img-overview {
+    display: flex;
+    justify-content: space-around;
+  }
+  .fInfoA{
+    position: relative;
+    bottom: 10%;
+    left: 5%;
+    width: 35%;
+    text-align: right;
+  }
+  
+  .fInfoB{
+    position: relative;
+    width: 70%;
+  }
+  
+  .fOverview {
+    width: 90%;
+    height: 45%;
+    text-align: left;
+    margin-left: 25px;
+    margin-top: 0px;
+    p {
+      margin: 0;
+    }
+  }
+
+  
+  .submitAll {
+    position: absolute;
+    left: 55%;
+    bottom: 30%;
+    display: flex;
+    width: 100%;
+  }
+  
+  .submitOrderB {
+    position: relative;
+    width: 30%;
+    text-align: left;
+    margin-left: 25px;
+  }
+  
+  .subBot {
+    all: unset;
+    text-align: center;
+    width: 200px;
+    font-size: 20px;
+    height: 66px;
+    background-color: rgb(0, 168, 155);
+    color: white;
+    opacity: 0.7;
+    transition: 0.3s;
+    border: 0;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .subBot:hover{
+    opacity: 1;
+  }

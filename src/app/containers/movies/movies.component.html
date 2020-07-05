@@ -1,0 +1,29 @@
+<div class="movies">
+    <div class="movie" *ngFor="let pelicula of pelisMostrar">
+        <a routerLink="/movie" routerLinkActive="active-link">
+            <img width="200" height="288" (click)="moviesService.locateMovies(pelicula)"
+            src="https://image.tmdb.org/t/p/w200/{{pelicula.poster_path}}"
+            alt="poster">
+        </a>
+        <p>{{pelicula.title}}</p>
+    </div>
+</div>
+<div class="pagination">
+    <button class="pageButton" (click)="backPage()"> < </button> {{page}}
+    <button class="pageButton" (click)="nextPage()"> > </button>
+</div>
+
+
+<!--
+<app-movie-modal *ngIf="showModal" [showModal]="showModal" (closed)="closeMovieModalDetail()" [movie]="currentMovie"></app-movie-modal>-->
+<!-- movie esta en movie-modal mientras que currentMovie esta en el typescript -->
+<!--
+<div class="movies" *ngIf="getMovies() as movies">
+
+    <div class="movie" *ngFor="let movie of movies" (click)="showMovieModalDetail(movie)">
+        <h5>{{movie.title}}</h5>
+        <img src="https://image.tmdb.org/t/p/w185/{{movie.poster_path}}" alt="">
+    </div>
+</div>-->
+
+

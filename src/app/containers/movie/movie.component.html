@@ -1,0 +1,29 @@
+<div class="filmmain" >
+  <div class="filmmainChild">
+    <div class="blank"></div>
+    <div class="filmTitle">
+        {{choosenFilm.title}}
+    </div>
+    <div class="img-overview">
+      <div class="filmInfor">
+        <div class="fInfoA">
+          <img width="300" height="430" src="https://image.tmdb.org/t/p/w200/{{choosenFilm.poster_path}}" alt="">
+        </div>
+      </div>    
+      <div class="fInfoB">
+        <div class="fOverview">
+          <p>{{choosenFilm.overview}}</p>
+        </div>
+      </div>
+    </div>
+    <div class="submitAll">
+        <div  class="submitOrderB">
+          <div *ngIf="isLogin"  class="submitCont">
+            <button type="submit" class="subBot" (click)="createOrder(choosenFilm._id)">
+              <p>Alquilar</p>
+            </button>
+          </div>
+        </div>   
+    </div>
+  </div>
+</div>
