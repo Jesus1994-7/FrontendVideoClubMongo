@@ -16,9 +16,10 @@
         </div>
       </div>
     </div>
+    <div class="blank"></div>
     <div class="enviar">
         <div  class="enviarIdFilm">
-          <div *ngIf="isLogin">
+          <div *ngIf="isLogin"  class="submitCont">
             <button type="submit" class="botonEnviar" (click)="createOrder(choosenFilm._id)">
               <p>Alquilar</p>
             </button>

@@ -26,7 +26,6 @@ export class LoginComponent  {
 
           this.userService.isProfOut = true;
           console.log(this.userService.isProfOut)
-
           
           setTimeout(() => {
             this.router.navigate(['/']);

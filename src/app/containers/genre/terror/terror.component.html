@@ -1,7 +1,7 @@
 <div class="title">Terror</div>
 <div class="movies">
     <div class="movie" *ngFor="let terrorMovie of movieService.getMoviesGenre()">
-       <a routerLink="/allmovies" routerLinkActive="active-link">
+       <a routerLink="/movie" routerLinkActive="active-link">
         <img width="200" (click)="movieService.locateFilm(terrorMovie)" 
          height="288" src="https://image.tmdb.org/t/p/w200/{{terrorMovie.poster_path}}" 
          alt="poster">

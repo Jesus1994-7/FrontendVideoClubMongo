@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { MovieService } from 'src/app/services/movie.service';
 import { UserService } from 'src/app/services/user.service';
 import { OrderService } from 'src/app/services/order.service';
-import { Order } from 'src/app/models/order.model';
 import { User } from 'src/app/models/user.model';
 
 @Component({
@@ -39,7 +38,7 @@ export class MovieComponent implements OnInit {
   
   createOrder(filmId) {
     console.log('entra')
-    
+
     //Asignacion a order de MovieId
     this.order.movieId = filmId;
 
@@ -58,7 +57,9 @@ export class MovieComponent implements OnInit {
     
     //Lanzamos el pedido
     this.orderService.createOrder(this.order)
-    .subscribe()
+    .subscribe(res => {
+      alert('Pedido realizado con exito')
+    })
   }
 
 }

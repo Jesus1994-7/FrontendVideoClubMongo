@@ -1,7 +1,7 @@
 <div class="title">Amor</div>
 <div class="movies">
     <div class="movie" *ngFor="let passionMovie of movieService.getMoviesGenre()">
-       <a routerLink="/allmovies" routerLinkActive="active-link">
+       <a routerLink="/movie" routerLinkActive="active-link">
         <img width="200" (click)="movieService.locateFilm(passionMovie)" 
          height="288" src="https://image.tmdb.org/t/p/w200/{{passionMovie.poster_path}}" 
          alt="poster">
