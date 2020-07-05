@@ -19,14 +19,15 @@ export class LoginComponent  {
       const credentials :Credentials = loginForm.value;
       this.userService.login(credentials)
         .subscribe(res => {
-          localStorage.setItem('localDates', JSON.stringify(res))
-          
+
+          localStorage.setItem('authToken', res.token);
           localStorage.setItem('user', JSON.stringify(res.user))
           this.userService.setUser(res.user);
 
           this.userService.isProfOut = true;
-          console.log(this.userService.isProfOut);
+          console.log(this.userService.isProfOut)
 
+          
           setTimeout(() => {
             this.router.navigate(['/']);
           }, 1500);
