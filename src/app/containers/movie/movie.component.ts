@@ -17,35 +17,39 @@ export class MovieComponent implements OnInit {
   choosenFilmGenre : string = "";
   days = 3;
   
-  order: Order = {
+  order = {
     userId : "",
     movieId : "",
     deliveryDate : new Date(),
     returnDate : new Date()
   }
-  constructor(private movieService:MovieService,
+  constructor(public orderService:OrderService,
+              private movieService:MovieService,
               private userService:UserService,
-              private orderService:OrderService) { }
+              ) { }
 
   ngOnInit(): void {
 
     this.isLogin = this.userService.isProfOut;
     this.choosenFilm = this.movieService.MoviesChoosen;
-    console.log(this.choosenFilm)
+
+    
+
   }
   
-  createOrder(order: Order):void {
+  createOrder(filmId) {
     console.log('entra')
-    var userData:User = JSON.parse(localStorage.getItem('user'));
-    
-    this.order.userId = userData._id;
-    this.order.movieId = this.choosenFilm._id;
+
+    this.order.movieId = filmId;
+
+    var dataLogin:User = JSON.parse(localStorage.getItem('user'));
+    this.order.userId = dataLogin['_id'];
+
     this.order.deliveryDate = new Date();
     this.order.returnDate = new Date();  
     
-    this.orderService.createOrder(order)
-    .subscribe(res => this.order = res,
-      error => console.log(error))
+    this.orderService.createOrder(this.order)
+    .subscribe()
   }
 
 }
