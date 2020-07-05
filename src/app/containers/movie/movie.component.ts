@@ -39,19 +39,24 @@ export class MovieComponent implements OnInit {
   
   createOrder(filmId) {
     console.log('entra')
-
+    
+    //Asignacion a order de MovieId
     this.order.movieId = filmId;
 
+    //Fechas de alquiler y devolucion
     let today = new Date();
     let tomorrow = new Date();
     tomorrow.setDate(today.getDate()+3);
 
+     //Obtenemos el id de usuario almacenado en LocalStorage
     var dataLogin:User = JSON.parse(localStorage.getItem('user'));
     this.order.userId = dataLogin['_id'];
 
+    //Asignacion de fechas
     this.order.deliveryDate = today;
     this.order.returnDate = tomorrow;  
     
+    //Lanzamos el pedido
     this.orderService.createOrder(this.order)
     .subscribe()
   }
