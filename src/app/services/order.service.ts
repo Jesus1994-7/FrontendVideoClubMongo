@@ -12,10 +12,19 @@ export class OrderService {
   API_URL = environment.API_URL; //http://localhost:3000
 
   private order : Order;
+  isOrder : boolean = false;
 
   constructor(private httpClient: HttpClient) { }
 
     createOrder(order: Order) : Observable<Order> {
-      return this.httpClient.post<Order>(this.API_URL + '/orders', order)
+      return this.httpClient.post<Order>(this.API_URL + '/orders', order);
+    }
+
+    getOrder(idOrder: any) : Observable<any> {
+      return this.httpClient.get<Order>(this.API_URL + '/orders/', idOrder);
+    }
+
+    deleteOrder(idOrder : any) : Observable<any> {
+      return this.httpClient.delete(this.API_URL + '/orders/delete/', idOrder);
     }
 }

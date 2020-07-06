@@ -15,6 +15,7 @@ export class MovieComponent implements OnInit {
   choosenFilm : any = {};
   choosenFilmGenre : string = "";
   days = 3;
+  orderDone : boolean = false;
   
   order = {
     userId : "",
@@ -38,6 +39,7 @@ export class MovieComponent implements OnInit {
   
   createOrder(filmId) {
     console.log('entra')
+    this.orderService.isOrder = true
 
     //Asignacion a order de MovieId
     this.order.movieId = filmId;
